@@ -1,8 +1,7 @@
 {
-  "name": "mft-client",
-  "productName": "mft-client",
+  "name": "mftclient",
   "version": "1.0.0",
-  "description": "Electron MFT Client",
+  "description": "Mft app",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -27,9 +26,12 @@
     "node-loader": "^2.0.0",
     "style-loader": "^3.3.4"
   },
-  "keywords": [],
-  "author": "Pranav",
-  "license": "MIT",
+  "keywords": [
+    "electron",
+    "mft"
+  ],
+  "author": "YuchenHan",
+  "license": "ISC",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
   }
