@@ -1,0 +1,698 @@
+/* styles.css */
+body{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+}
+
+.header {
+  padding-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  a {
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+    i {
+      padding-right: 5px;
+    }
+  }
+  h2 {
+    text-align: center;
+  }
+}
+
+#pathInfo {
+  visibility: hidden;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.centerBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.categoryWrapper{
+  height: 100%;
+  width: 100%;
+  background: no-repeat center center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  a { 
+    color: white;
+    text-decoration: none;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: relative;
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+}
+
+.categoryWrapper:after{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a29ca9+0,95909b+99 */
+  background: #a29ca9; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #a29ca9 0%, #95909b 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #a29ca9 0%,#95909b 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #a29ca9 0%,#95909b 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a29ca9', endColorstr='#95909b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    content: '';
+  opacity: 0;
+    -webkit-transition: opacity 0.9s ease 0s; 
+}
+
+.categoryWrapper:hover:after{
+  opacity: 0.4;
+}
+
+h1{
+  color:white;
+  font-size: 50px;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.15s ease 0s; 
+  position: relative;
+  z-index: 10;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+h2{
+  text-indent: 20px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.categoryWrapper:hover h1{
+  transform: translateY(-10px);
+}
+
+.categoryWrapper button{
+  position: absolute;
+  transform: translatey(60px);
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  color:white;
+  width: 275px;
+  height:50px;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  z-index: 10;
+}
+
+.categoryWrapper button span{
+  display: block;
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.categoryWrapper button > span:after{
+  content:'';
+  position: absolute;
+  top:0;
+  left: 50%;
+  width: 20px;
+  height: 0;
+  
+  border: 1px solid white;
+  border-left: none;
+  border-bottom: none;
+  
+      transition: height 0.15s ease-out, width 0.15s ease-out 0.15s;
+}
+
+.categoryWrapper:hover button > span:after{
+  width: calc(50% - 1px);
+  height: calc(100% - 2px);
+  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+
+.categoryWrapper button > span:before{
+  content:'';
+  position: absolute;
+  top:0;
+  right: 50%;
+  width: 20px;
+  height: 0;
+  
+  border: 1px solid white;
+  border-right: none;
+  border-bottom: none;
+  
+      transition: height 0.15s ease-out, width 0.15s ease-out 0.15s;
+}
+
+.categoryWrapper:hover button > span:before{
+  width: calc(50% - 1px);
+  height: calc(100% - 2px);
+  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+
+.categoryWrapper button > span > span:before{
+  content:'';
+  position: absolute;
+  bottom:0;
+  right: 0%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  
+}
+
+.categoryWrapper:hover button > span > span:before{
+  opacity: 1;
+  border-bottom: 1px solid white;
+  width: calc(50%);
+  height: 1px;
+  transition: opacity 0s ease-out 0.29s, width 0.15s ease-out 0.3s;
+}
+
+.categoryWrapper button > span > span:after{
+  content:'';
+  position: absolute;
+  bottom:0;
+  left: 0%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  
+}
+
+.categoryWrapper:hover button > span > span:after{
+  opacity: 1;
+  border-bottom: 1px solid white;
+  width: calc(50%);
+  height: 1px;
+  transition: opacity 0s ease-out 0.29s, width 0.15s ease-out 0.3s;
+}
+
+.categoryWrapper button > span > span > span{
+  transition: color 0.15s ease-out 0.3s;
+  color: transparent;
+}
+
+.categoryWrapper:hover button > span > span > span{
+  color:white;
+}
+
+.categoryWrapper button > span > span > span:after{
+  position: absolute;
+  top:0;left:0;right:0;bottom:0;
+  color:#1f2e4d;
+  content: attr(data-attr-span);
+  width: 0%;
+  height: 100%;
+  background:white;
+  white-space: nowrap;
+  text-align: center;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transition: width 0.2s;
+}
+
+.categoryWrapper button:hover > span > span > span:after{
+  width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkblue;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 15px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 30px; /* rounded buttons */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.squareBtn {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #1e1f20;
+  background-color: #97c5fc;
+  min-height: 100px;
+  min-width: 100px;
+  color: white;
+  margin: 0 0.6em 1em 0.6em;
+  vertical-align: top;
+
+  .storageType {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-10px, 50%);
+  }
+
+  .storageId {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 10px;
+    transform: translate(-10px, -100%);
+  }
+}
+
+.storageOptions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0.5em;
+  overflow: auto;
+  max-height: 60%;
+  overflow-x: hidden;
+  position: relative;
+  
+}
+.button-container {
+  width: 100%;
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+}
+.buttonPanel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 0.5em;
+  justify-content: center;
+
+  .btn {
+    width: 100%;
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+  }
+}
+
+.fileBrowser {
+  height: 100%;
+  width: 65%;
+  float: right;
+  background: #d4ebfa;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0.5em;
+
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  .buttonPanel {
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+}
+
+.storageSelector {
+  height: 100%; /* cap height to make scroll bar appear, or change overflow */
+  width: 35%;
+  float: left;
+  background-image: linear-gradient(to right, #def2fc, #dbf9ff);
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  .buttonPanel {
+    margin-top: 15vh;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+
+    .btn {
+      margin: 0.6em 0 0 0;
+    }
+
+  }
+}
+
+.fileOptions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0.5em;
+  overflow: auto;
+  max-height: 60%;
+  overflow-x: hidden;
+  position: relative;
+
+  .fileBtn {
+    cursor: pointer;
+    border: 1px solid #1e1f20;
+    background-color: #97c5fc;
+    min-height: 50px;
+    color: white;
+    vertical-align: top;
+    text-align: left;
+  }
+  
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #e0e0e0;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0.5em;
+  overflow-x: hidden;
+  .squareBtn {
+    width: 20%;
+  }
+
+
+}
+
+
+.loader { /*adapted from https://www.w3schools.com/howto/howto_css_loader.asp*/
+  text-align: center;
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid black;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari - REMOVE?? */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    padding-right: 10px;
+  }
+}
+
+.storage-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.storage-option {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.storage-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.storage-list th,
+.storage-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.storage-list th {
+  background-color: #f2f2f2;
+}
+
+button#addButton {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 4px;
+}
+
+button#addButton:hover {
+  background-color: #45a049;
+}
+button#removeButton {
+  padding: 10px;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button#removeButton:hover {
+  background-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-image: linear-gradient(to right, #def2fc, #dbf9ff);
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+}
+
+.storage-list-container, .file-browser {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.storage-list-container {
+  background-image: linear-gradient(to right, #def2fc, #dbf9ff);
+  padding: 20px;
+}
+
+.file-browser {
+  background-color: #d4ebfa;
+  padding: 20px;
+}
+.storage-item {
+  background: #CCC;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.file-list {
+  margin-top: 20px;
+}
+
+.storage-item.selected {
+  background-color: #3498db;
+}
+
+.path {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.file-item {
+  background: #CCC;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-item:hover {
+  background-color: #e0e0e0;
+}
+
+.file-actions button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.file-actions button:hover {
+  opacity: 0.8;
+}
+
+#copyButton {
+  background-color: #f1c40f;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+#pasteButton {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: #2ecc71;
+  color: white;
+}
+
+#deleteButton {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: #e74c3c;
+  color: white;
+}
+.center-container {
+  display: grid;
+  place-items: center;
+}
+#addStorageButton {
+  padding: 10px 20px;
+  border: none;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: cornflowerblue;
+  color: white;
+}
+.file-item.selected {
+  background-color: #add8e6;
+}
+
+.add-storage-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#backButton {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+}
+.storage-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.storage-option {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.storage-option:hover {
+  background-color: #e0e0e0;
+}

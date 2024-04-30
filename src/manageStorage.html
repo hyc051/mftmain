@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <meta charset="UTF-8">
+    <link href="./styles.css" rel="stylesheet">
+    <script src="./responsive/jquery-3.7.1.slim.min.js" type="text/javascript"></script>
+    <script src="./responsive/responsive.js"></script>
+    <title>Browse Storage</title>
+</head>
+
+
+<div class="storageSelector">
+    <h2>Select Storage</h2>
+
+    <div class="storageOptions" id="mainStorageLocation">
+    </div>
+
+    <div class="button-container">
+        <a href="./newStorage.html"><button id="addButton">Add Storage Menu </button> </a>
+        <button id="removeButton"> Remove Selected Storage </button>
+    </div>
+</div>
+
+<div class="fileBrowser">
+    <h2>File Browser</h2>
+    <h3 id="pathInfo"> Path: </h3>
+    <div class="fileOptions" id="listedFileLocation">
+    </div>
+    <div class="file-actions">
+        <button id="deleteButton"> Delete File </button>
+        <button id="copyButton"> Copy File </button>
+        <button id="pasteButton"> Paste File </button>
+    </div>
+
+</div>
+</body>
+</html>
